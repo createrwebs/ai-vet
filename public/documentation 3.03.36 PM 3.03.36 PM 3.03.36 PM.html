@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Vet - User Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: auto;
+        }
+        .section-anchor {
+            scroll-margin-top: 80px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Sidebar -->
+    <nav class="fixed left-0 top-0 h-full w-64 bg-blue-900 text-white overflow-y-auto z-40 hidden lg:block">
+        <div class="p-6">
+            <h1 class="text-2xl font-bold mb-8 flex items-center">
+                <i class="fas fa-stethoscope mr-3 text-blue-300"></i>
+                AI Vet
+            </h1>
+            <ul class="space-y-2">
+                <li><a href="#introduction" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-book-open mr-3 w-5"></i>Introduction</a></li>
+                <li><a href="#technology-stack" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-code mr-3 w-5"></i>Technology Stack</a></li>
+                <li><a href="#installation" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-download mr-3 w-5"></i>Installation</a></li>
+                <li><a href="#getting-started" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-rocket mr-3 w-5"></i>Getting Started</a></li>
+                <li><a href="#dashboard" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-tachometer-alt mr-3 w-5"></i>Dashboard</a></li>
+                <li><a href="#patients" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-paw mr-3 w-5"></i>Pet Management</a></li>
+                <li><a href="#owners" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-user-friends mr-3 w-5"></i>Owner Management</a></li>
+                <li><a href="#appointments" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-calendar-alt mr-3 w-5"></i>Appointments</a></li>
+                <li><a href="#reports" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-file-medical mr-3 w-5"></i>Veterinary Reports</a></li>
+                <li><a href="#ai-features" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-brain mr-3 w-5"></i>AI Features</a></li>
+                <li><a href="#ai-assistant" class="block px-4 py-2 ml-4 text-sm rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-robot mr-3 w-4"></i>AI Assistant</a></li>
+                <li><a href="#ai-treatment" class="block px-4 py-2 ml-4 text-sm rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-stethoscope mr-3 w-4"></i>Treatment Plans</a></li>
+                <li><a href="#ai-drug-interaction" class="block px-4 py-2 ml-4 text-sm rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-pills mr-3 w-4"></i>Drug Interaction</a></li>
+                <li><a href="#ai-image" class="block px-4 py-2 ml-4 text-sm rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-x-ray mr-3 w-4"></i>Image Analysis</a></li>
+                <li><a href="#ai-voice" class="block px-4 py-2 ml-4 text-sm rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-microphone mr-3 w-4"></i>Voice Input</a></li>
+                <li><a href="#ai-optimizer" class="block px-4 py-2 ml-4 text-sm rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-calendar-check mr-3 w-4"></i>Appointment Optimizer</a></li>
+                <li><a href="#ai-risk" class="block px-4 py-2 ml-4 text-sm rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-shield-alt mr-3 w-4"></i>Risk Assessment</a></li>
+                <li><a href="#ai-trends" class="block px-4 py-2 ml-4 text-sm rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-chart-line mr-3 w-4"></i>Health Trends</a></li>
+                <li><a href="#ai-analytics" class="block px-4 py-2 ml-4 text-sm rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-chart-bar mr-3 w-4"></i>Health Analytics</a></li>
+                <li><a href="#ai-symptom" class="block px-4 py-2 ml-4 text-sm rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-search mr-3 w-4"></i>Symptom Analyzer</a></li>
+                <li><a href="#ai-report" class="block px-4 py-2 ml-4 text-sm rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-file-alt mr-3 w-4"></i>Report Generator</a></li>
+                <li><a href="#settings" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-cog mr-3 w-5"></i>Settings & Profile</a></li>
+                <li><a href="#user-management" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-users-cog mr-3 w-5"></i>User Management</a></li>
+                <li><a href="#tips" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-lightbulb mr-3 w-5"></i>Tips & Best Practices</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="lg:ml-64">
+        <!-- Header -->
+        <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 shadow-lg">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl font-bold mb-4 flex items-center">
+                    <i class="fas fa-stethoscope mr-4 text-blue-200"></i>
+                    AI Vet
+                </h1>
+                <p class="text-xl text-blue-100">Complete AI Powered Veterinary Clinic Management System</p>
+                <p class="mt-4 text-blue-200">Comprehensive User Documentation</p>
+            </div>
+        </header>
+
+        <!-- Content Container -->
+        <div class="max-w-4xl mx-auto p-8 space-y-12">
+            
+            <!-- Introduction -->
+            <section id="introduction" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-book-open text-blue-600 mr-3"></i>
+                    Introduction
+                </h2>
+                <div class="prose max-w-none">
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Welcome to <strong>AI Vet</strong>, a comprehensive AI-powered veterinary practice management system designed to streamline your veterinary clinic operations. This system combines traditional practice management features with cutting-edge artificial intelligence to help you provide better care for your animal patients.
+                    </p>
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 my-6">
+                        <p class="text-blue-800"><strong>Key Benefits:</strong></p>
+                        <ul class="list-disc list-inside text-blue-700 mt-2 space-y-1">
+                            <li>Streamlined pet and owner management and record keeping</li>
+                            <li>Intelligent appointment scheduling and optimization</li>
+                            <li>AI-powered veterinary assistance and analysis</li>
+                            <li>Comprehensive reporting and analytics</li>
+                            <li>Secure, compliant data management</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technology Stack & Dependencies -->
+            <section id="technology-stack" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-code text-indigo-600 mr-3"></i>
+                    Technology Stack & Dependencies
+                </h2>
+                <div class="space-y-6">
+                    <p class="text-gray-700 leading-relaxed">
+                        This application is built with modern, secure, and up-to-date technologies. All dependencies have been updated to meet the latest security requirements and best practices.
+                    </p>
+                    
+                    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-lg mb-6">
+                        <h3 class="font-semibold text-indigo-900 mb-3 flex items-center">
+                            <i class="fas fa-shield-alt mr-2"></i>
+                            Security Status
+                        </h3>
+                        <p class="text-indigo-800 text-sm mb-2">All packages are up-to-date with security vulnerabilities resolved:</p>
+                        <ul class="list-disc list-inside text-indigo-700 text-sm space-y-1">
+                            <li>✅ 0 security vulnerabilities</li>
+                            <li>✅ All critical security patches applied</li>
+                            <li>✅ Latest stable versions installed</li>
+                        </ul>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                            <h3 class="text-lg font-semibold text-blue-900 mb-3">Core Framework</h3>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex justify-between">
+                                    <span class="text-blue-800">Next.js</span>
+                                    <code class="bg-blue-100 px-2 py-1 rounded text-blue-900">15.5.0</code>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-blue-800">React</span>
+                                    <code class="bg-blue-100 px-2 py-1 rounded text-blue-900">19.2.1</code>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-blue-800">React DOM</span>
+                                    <code class="bg-blue-100 px-2 py-1 rounded text-blue-900">19.2.1</code>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-blue-800">TypeScript</span>
+                                    <code class="bg-blue-100 px-2 py-1 rounded text-blue-900">^5</code>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-green-50 rounded-lg p-6 border border-green-200">
+                            <h3 class="text-lg font-semibold text-green-900 mb-3">Authentication & Database</h3>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex justify-between">
+                                    <span class="text-green-800">NextAuth.js</span>
+                                    <code class="bg-green-100 px-2 py-1 rounded text-green-900">^4.24.13</code>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-green-800">Mongoose</span>
+                                    <code class="bg-green-100 px-2 py-1 rounded text-green-900">^9.0.0</code>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-green-800">MongoDB</span>
+                                    <code class="bg-green-100 px-2 py-1 rounded text-green-900">^6.18.0</code>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-green-800">@auth/mongodb-adapter</span>
+                                    <code class="bg-green-100 px-2 py-1 rounded text-green-900">^3.10.0</code>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-purple-50 rounded-lg p-6 border border-purple-200">
+                            <h3 class="text-lg font-semibold text-purple-900 mb-3">UI & Styling</h3>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex justify-between">
+                                    <span class="text-purple-800">Tailwind CSS</span>
+                                    <code class="bg-purple-100 px-2 py-1 rounded text-purple-900">^4</code>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-purple-800">Lucide React</span>
+                                    <code class="bg-purple-100 px-2 py-1 rounded text-purple-900">^0.555.0</code>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-purple-800">React Hot Toast</span>
+                                    <code class="bg-purple-100 px-2 py-1 rounded text-purple-900">^2.6.0</code>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-orange-50 rounded-lg p-6 border border-orange-200">
+                            <h3 class="text-lg font-semibold text-orange-900 mb-3">Additional Libraries</h3>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex justify-between">
+                                    <span class="text-orange-800">next-intl</span>
+                                    <code class="bg-orange-100 px-2 py-1 rounded text-orange-900">^4.3.6</code>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-orange-800">html2canvas</span>
+                                    <code class="bg-orange-100 px-2 py-1 rounded text-orange-900">^1.4.1</code>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-orange-800">jspdf</span>
+                                    <code class="bg-orange-100 px-2 py-1 rounded text-orange-900">^3.0.2</code>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-orange-800">bcryptjs</span>
+                                    <code class="bg-orange-100 px-2 py-1 rounded text-orange-900">^3.0.2</code>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Installation -->
+            <section id="installation" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-download text-indigo-600 mr-3"></i>
+                    Installation
+                </h2>
+                
+                <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-lg mb-8">
+                    <h3 class="font-semibold text-indigo-900 mb-2 flex items-center">
+                        <i class="fas fa-shopping-cart mr-2"></i>
+                        Downloading from CodeCanyon
+                    </h3>
+                    <p class="text-indigo-800 text-sm mb-2">This script is available on CodeCanyon. After purchase, you'll receive:</p>
+                    <ol class="list-decimal list-inside text-indigo-700 text-sm space-y-1 ml-4">
+                        <li><strong>main_files.zip</strong> - The initial download package</li>
+                        <li>After extracting main_files.zip, you'll get <strong>ai-vet.zip</strong> - This is the actual script file</li>
+                        <li>Extract ai-vet.zip to begin installation</li>
+                    </ol>
+                </div>
+
+                <!-- Prerequisites -->
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+                        <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                        Prerequisites
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                            <h4 class="font-semibold text-gray-900 mb-3">1. Install Node.js</h4>
+                            <p class="text-gray-700 mb-3">Download and install Node.js from the official website:</p>
+                            <div class="bg-gray-100 rounded p-4 mb-3">
+                                <p class="text-sm text-gray-800 mb-2"><strong>Download:</strong> <a href="https://nodejs.org/" target="_blank" class="text-blue-600 hover:underline">https://nodejs.org/</a></p>
+                                <p class="text-sm text-gray-800">Choose the LTS (Long Term Support) version for stability.</p>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">Verify installation:</p>
+                            <div class="bg-gray-900 text-green-400 rounded p-3 font-mono text-sm">
+                                <code>node --version</code><br>
+                                <code>npm --version</code>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                            <h4 class="font-semibold text-gray-900 mb-3">2. Install MongoDB</h4>
+                            <p class="text-gray-700 mb-3">Choose one of the following options:</p>
+                            <div class="space-y-3">
+                                <div class="bg-blue-50 rounded p-4 border border-blue-200">
+                                    <h5 class="font-semibold text-blue-900 mb-2">Option A: MongoDB Atlas (Cloud - Recommended)</h5>
+                                    <ul class="list-disc list-inside text-blue-800 text-sm space-y-1">
+                                        <li>Sign up at <a href="https://www.mongodb.com/cloud/atlas" target="_blank" class="text-blue-600 hover:underline">MongoDB Atlas</a></li>
+                                        <li>Create a free cluster (M0 tier available)</li>
+                                        <li>Get your connection string</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-green-50 rounded p-4 border border-green-200">
+                                    <h5 class="font-semibold text-green-900 mb-2">Option B: Local MongoDB Installation</h5>
+                                    <ul class="list-disc list-inside text-green-800 text-sm space-y-1">
+                                        <li>Download from <a href="https://www.mongodb.com/try/download/community" target="_blank" class="text-green-600 hover:underline">MongoDB Community Server</a></li>
+                                        <li>Install and start MongoDB service</li>
+                                        <li>Default connection: <code class="bg-gray-200 px-2 py-1 rounded">mongodb://localhost:27017</code></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Installation Steps -->
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+                        <i class="fas fa-cog text-purple-600 mr-2"></i>
+                        Installation Steps
+                    </h3>
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-purple-500 pl-6">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-3">Step 1: Download and Extract Files</h4>
+                            <p class="text-gray-700 mb-3">Download the script from CodeCanyon:</p>
+                            <ol class="list-decimal list-inside text-gray-700 space-y-2 mb-4">
+                                <li>Log in to your CodeCanyon account</li>
+                                <li>Navigate to your downloads section</li>
+                                <li>Download <code class="bg-gray-200 px-2 py-1 rounded">main_files.zip</code></li>
+                                <li>Extract <code class="bg-gray-200 px-2 py-1 rounded">main_files.zip</code> to get <code class="bg-gray-200 px-2 py-1 rounded">ai-vet.zip</code></li>
+                                <li>Extract <code class="bg-gray-200 px-2 py-1 rounded">ai-vet.zip</code> to your desired location</li>
+                            </ol>
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mb-3">
+                                <p class="text-blue-800 text-sm"><strong>Note:</strong> After extraction, you should have a folder named <code class="bg-blue-100 px-2 py-1 rounded">ai-vet</code> (or similar) containing all the project files.</p>
+                            </div>
+                            <p class="text-gray-700 mb-3">Navigate to the extracted folder:</p>
+                            <div class="bg-gray-900 text-green-400 rounded p-4 font-mono text-sm">
+                                <code>cd ai-vet</code>
+                            </div>
+                        </div>
+
+                        <div class="border-l-4 border-blue-500 pl-6">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-3">Step 2: Install Dependencies</h4>
+                            <p class="text-gray-700 mb-3">Navigate to the project directory and install all required packages:</p>
+                            <div class="bg-gray-900 text-green-400 rounded p-4 font-mono text-sm mb-3">
+                                <code>npm install</code>
+                            </div>
+                            <p class="text-sm text-gray-600">This will install all dependencies listed in <code class="bg-gray-200 px-2 py-1 rounded">package.json</code>. This process may take a few minutes.</p>
+                        </div>
+
+                        <div class="border-l-4 border-green-500 pl-6">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-3">Step 3: Configure Environment Variables</h4>
+                            <p class="text-gray-700 mb-4">Create a <code class="bg-gray-200 px-2 py-1 rounded">.env.local</code> file in the root directory with the following variables:</p>
+                            <div class="bg-gray-900 text-green-400 rounded p-4 font-mono text-sm mb-4">
+                                <code>MONGODB_URI=mongodb://localhost:27017/ai-vet</code><br>
+                                <code>NEXTAUTH_URL=http://localhost:3000</code><br>
+                                <code>NEXTAUTH_SECRET=your-secret-key-here</code>
+                            </div>
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mb-4">
+                                <p class="text-blue-800 text-sm mb-2"><strong>Environment Variables Explained:</strong></p>
+                                <ul class="list-disc list-inside text-blue-700 text-sm space-y-1">
+                                    <li><strong>MONGODB_URI:</strong> Your MongoDB connection string. For MongoDB Atlas, use: <code class="bg-blue-100 px-1 py-0.5 rounded">mongodb+srv://username:password@cluster.mongodb.net/ai-vet</code></li>
+                                    <li><strong>NEXTAUTH_URL:</strong> The base URL of your application (use your production domain in production)</li>
+                                    <li><strong>NEXTAUTH_SECRET:</strong> A random secret key for encrypting JWT tokens. Generate one using: <code class="bg-blue-100 px-1 py-0.5 rounded">openssl rand -base64 32</code></li>
+                                </ul>
+                            </div>
+                            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
+                                <p class="text-yellow-800 text-sm"><strong>Important:</strong></p>
+                                <ul class="list-disc list-inside text-yellow-700 text-sm mt-2 space-y-1">
+                                    <li>Keep your <code class="bg-yellow-100 px-1 py-0.5 rounded">.env.local</code> file secure and never share it</li>
+                                    <li>GPT-4.1 API key can be configured later through the Settings → AI Settings page</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="border-l-4 border-orange-500 pl-6">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-3">Step 4: Set Up Database</h4>
+                            <p class="text-gray-700 mb-3">Ensure MongoDB is running and accessible:</p>
+                            <div class="space-y-3">
+                                <div class="bg-gray-50 rounded p-4 border border-gray-200">
+                                    <h5 class="font-semibold text-gray-900 mb-2">For Local MongoDB:</h5>
+                                    <div class="bg-gray-900 text-green-400 rounded p-3 font-mono text-sm mb-2">
+                                        <code># Start MongoDB service</code><br>
+                                        <code># Windows: net start MongoDB</code><br>
+                                        <code># macOS: brew services start mongodb-community</code><br>
+                                        <code># Linux: sudo systemctl start mongod</code>
+                                    </div>
+                                </div>
+                                <div class="bg-blue-50 rounded p-4 border border-blue-200">
+                                    <h5 class="font-semibold text-blue-900 mb-2">For MongoDB Atlas:</h5>
+                                    <ul class="list-disc list-inside text-blue-800 text-sm space-y-1">
+                                        <li>Ensure your IP address is whitelisted in Atlas Network Access</li>
+                                        <li>Create a database user with read/write permissions</li>
+                                        <li>Use the connection string provided by Atlas</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-l-4 border-teal-500 pl-6">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-3">Step 5: Seed Database</h4>
+                            <p class="text-gray-700 mb-3">Populate the database with sample data for testing:</p>
+                            <div class="bg-gray-900 text-green-400 rounded p-4 font-mono text-sm mb-3">
+                                <code>npm run seed</code>
+                            </div>
+                            <p class="text-sm text-gray-600">This creates sample pets, owners, appointments, and reports for demonstration purposes.</p>
+                        </div>
+
+                        <div class="border-l-4 border-indigo-500 pl-6">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-3">Step 6: Start Development Server</h4>
+                            <p class="text-gray-700 mb-3">Run the application in development mode:</p>
+                            <div class="bg-gray-900 text-green-400 rounded p-4 font-mono text-sm mb-3">
+                                <code>npm run dev</code>
+                            </div>
+                            <p class="text-gray-700 mb-3">The application will start on <code class="bg-gray-200 px-2 py-1 rounded">http://localhost:3000</code></p>
+                            <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded">
+                                <p class="text-green-800 text-sm"><strong>Success!</strong> You should see:</p>
+                                <div class="bg-gray-900 text-green-400 rounded p-3 font-mono text-sm mt-2">
+                                    <code>✓ Ready in X seconds</code><br>
+                                    <code>○ Local: http://localhost:3000</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Configuration -->
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+                        <i class="fas fa-brain text-indigo-600 mr-2"></i>
+                        AI API Configuration
+                    </h3>
+                    <p class="text-gray-700 mb-4">To use AI features, you need to configure an API key for GPT-4.1 through the Settings page:</p>
+                    <div class="space-y-4">
+                        <div class="bg-indigo-50 rounded-lg p-6 border border-indigo-200">
+                            <h4 class="font-semibold text-indigo-900 mb-3">Configure GPT-4.1 API Key</h4>
+                            <ol class="list-decimal list-inside text-indigo-800 space-y-2 text-sm">
+                                <li>Log in to the application</li>
+                                <li>Navigate to <strong>Settings → AI Settings</strong></li>
+                                <li>Add your OpenAI API key for GPT-4.1:
+                                    <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+                                        <li><strong>OpenAI:</strong> Get key from <a href="https://platform.openai.com/api-keys" target="_blank" class="text-indigo-600 hover:underline">OpenAI Platform</a></li>
+                                    </ul>
+                                </li>
+                                <li>Test the connection</li>
+                                <li>Activate GPT-4.1 as your AI model</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Production Build -->
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+                        <i class="fas fa-rocket text-red-600 mr-2"></i>
+                        Production Build
+                    </h3>
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <p class="text-gray-700 mb-4">To build the application for production:</p>
+                        <div class="space-y-3">
+                            <div class="bg-gray-900 text-green-400 rounded p-4 font-mono text-sm">
+                                <code># Build the application</code><br>
+                                <code>npm run build</code><br>
+                                <br>
+                                <code># Start production server</code><br>
+                                <code>npm run start</code>
+                            </div>
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+                                <p class="text-blue-800 text-sm"><strong>Note:</strong> Make sure to:</p>
+                                <ul class="list-disc list-inside text-blue-700 text-sm mt-2 space-y-1">
+                                    <li>Set <code class="bg-blue-100 px-1 py-0.5 rounded">NEXTAUTH_URL</code> to your production domain</li>
+                                    <li>Use a strong <code class="bg-blue-100 px-1 py-0.5 rounded">NEXTAUTH_SECRET</code></li>
+                                    <li>Configure production MongoDB connection string</li>
+                                    <li>Enable HTTPS for secure connections</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Troubleshooting -->
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+                        <i class="fas fa-tools text-yellow-600 mr-2"></i>
+                        Troubleshooting
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+                            <h4 class="font-semibold text-red-900 mb-3">Common Issues and Solutions</h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <h5 class="font-semibold text-red-800 mb-2">Issue: MongoDB Connection Failed</h5>
+                                    <ul class="list-disc list-inside text-red-700 text-sm space-y-1 ml-4">
+                                        <li>Verify MongoDB is running: <code class="bg-red-100 px-2 py-1 rounded">mongosh</code> or check service status</li>
+                                        <li>Check connection string in <code class="bg-red-100 px-2 py-1 rounded">.env.local</code></li>
+                                        <li>For Atlas: Verify IP whitelist and credentials</li>
+                                        <li>Check firewall settings</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-red-800 mb-2">Issue: Port 3000 Already in Use</h5>
+                                    <ul class="list-disc list-inside text-red-700 text-sm space-y-1 ml-4">
+                                        <li>Stop other applications using port 3000</li>
+                                        <li>Or use a different port: <code class="bg-red-100 px-2 py-1 rounded">PORT=3001 npm run dev</code></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-red-800 mb-2">Issue: Module Not Found Errors</h5>
+                                    <ul class="list-disc list-inside text-red-700 text-sm space-y-1 ml-4">
+                                        <li>Delete <code class="bg-red-100 px-2 py-1 rounded">node_modules</code> folder</li>
+                                        <li>Delete <code class="bg-red-100 px-2 py-1 rounded">package-lock.json</code></li>
+                                        <li>Run <code class="bg-red-100 px-2 py-1 rounded">npm install</code> again</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-red-800 mb-2">Issue: Build Errors</h5>
+                                    <ul class="list-disc list-inside text-red-700 text-sm space-y-1 ml-4">
+                                        <li>Clear Next.js cache: <code class="bg-red-100 px-2 py-1 rounded">rm -rf .next</code></li>
+                                        <li>Check TypeScript errors: <code class="bg-red-100 px-2 py-1 rounded">npm run lint</code></li>
+                                        <li>Ensure all environment variables are set</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-red-800 mb-2">Issue: AI Features Not Working</h5>
+                                    <ul class="list-disc list-inside text-red-700 text-sm space-y-1 ml-4">
+                                        <li>Verify GPT-4.1 API key is correctly configured</li>
+                                        <li>Check API key permissions and quotas</li>
+                                        <li>Test API connection in Settings → AI Settings</li>
+                                        <li>Check browser console for error messages</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Available Scripts -->
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+                        <i class="fas fa-terminal text-gray-600 mr-2"></i>
+                        Available Scripts
+                    </h3>
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <code class="bg-gray-200 px-3 py-1 rounded font-mono text-sm mr-4">npm run dev</code>
+                                <p class="text-gray-700 text-sm flex-1">Start development server with hot reload on <code class="bg-gray-200 px-1 py-0.5 rounded">http://localhost:3000</code></p>
+                            </div>
+                            <div class="flex items-start">
+                                <code class="bg-gray-200 px-3 py-1 rounded font-mono text-sm mr-4">npm run build</code>
+                                <p class="text-gray-700 text-sm flex-1">Build the application for production using Turbopack</p>
+                            </div>
+                            <div class="flex items-start">
+                                <code class="bg-gray-200 px-3 py-1 rounded font-mono text-sm mr-4">npm run start</code>
+                                <p class="text-gray-700 text-sm flex-1">Start the production server (requires build first)</p>
+                            </div>
+                            <div class="flex items-start">
+                                <code class="bg-gray-200 px-3 py-1 rounded font-mono text-sm mr-4">npm run lint</code>
+                                <p class="text-gray-700 text-sm flex-1">Run ESLint to check code quality and find errors</p>
+                            </div>
+                            <div class="flex items-start">
+                                <code class="bg-gray-200 px-3 py-1 rounded font-mono text-sm mr-4">npm run seed</code>
+                                <p class="text-gray-700 text-sm flex-1">Populate database with sample data for testing</p>
+                            </div>
+                            <div class="flex items-start">
+                                <code class="bg-gray-200 px-3 py-1 rounded font-mono text-sm mr-4">npm run test:ai-results</code>
+                                <p class="text-gray-700 text-sm flex-1">Test AI results functionality</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Getting Started -->
+            <section id="getting-started" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-rocket text-green-600 mr-3"></i>
+                    Getting Started
+                </h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-3">1. Login to Your Account</h3>
+                        <p class="text-gray-600 mb-4">Access the system by navigating to the login page and entering your credentials:</p>
+                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-4">
+                            <p class="text-sm text-gray-600 mb-2"><strong>Default Demo Credentials:</strong></p>
+                            <p class="text-sm text-gray-600 mb-3">The system includes 4 different user roles. All users share the same password: <strong>password123</strong></p>
+                            <div class="grid md:grid-cols-2 gap-4 mt-3">
+                                <div class="bg-blue-50 rounded p-3 border border-blue-200">
+                                    <p class="text-sm font-semibold text-blue-900 mb-2">👨‍💼 Administrator</p>
+                                    <ul class="list-none text-xs text-blue-800 space-y-1">
+                                        <li><strong>Email:</strong> admin@aivet.com</li>
+                                        <li><strong>Password:</strong> password123</li>
+                                        <li class="text-blue-600 mt-2">Full system access</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-green-50 rounded p-3 border border-green-200">
+                                    <p class="text-sm font-semibold text-green-900 mb-2">👨‍⚕️ Veterinarian</p>
+                                    <ul class="list-none text-xs text-green-800 space-y-1">
+                                        <li><strong>Email:</strong> vet@aivet.com</li>
+                                        <li><strong>Password:</strong> password123</li>
+                                        <li class="text-green-600 mt-2">Medical features & patient management</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-purple-50 rounded p-3 border border-purple-200">
+                                    <p class="text-sm font-semibold text-purple-900 mb-2">👥 Staff</p>
+                                    <ul class="list-none text-xs text-purple-800 space-y-1">
+                                        <li><strong>Email:</strong> staff@aivet.com</li>
+                                        <li><strong>Password:</strong> password123</li>
+                                        <li class="text-purple-600 mt-2">Appointments & basic operations</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-orange-50 rounded p-3 border border-orange-200">
+                                    <p class="text-sm font-semibold text-orange-900 mb-2">📞 Receptionist</p>
+                                    <ul class="list-none text-xs text-orange-800 space-y-1">
+                                        <li><strong>Email:</strong> receptionist@aivet.com</li>
+                                        <li><strong>Password:</strong> password123</li>
+                                        <li class="text-orange-600 mt-2">Scheduling & data entry</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-3">2. Navigate the Dashboard</h3>
+                        <p class="text-gray-600 mb-4">After logging in, you'll be taken to the main dashboard where you can see:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
+                            <li>Practice statistics and key metrics</li>
+                            <li>Recent activities and appointments</li>
+                            <li>Quick access to common tasks</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-3">3. Explore Features</h3>
+                        <p class="text-gray-600">Use the left sidebar navigation to access all features of the system, including pet management, appointments, reports, and AI-powered tools.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dashboard -->
+            <section id="dashboard" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-tachometer-alt text-purple-600 mr-3"></i>
+                    Dashboard
+                </h2>
+                <div class="space-y-6">
+                    <p class="text-gray-700 leading-relaxed">
+                        The dashboard is your central command center, providing an overview of your practice at a glance.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                            <h3 class="text-lg font-semibold text-blue-900 mb-3 flex items-center">
+                                <i class="fas fa-chart-line mr-2"></i>
+                                Statistics Cards
+                            </h3>
+                            <p class="text-blue-800 text-sm mb-2">View key metrics including:</p>
+                            <ul class="list-disc list-inside text-blue-700 text-sm space-y-1">
+                                <li>Total Pets</li>
+                                <li>Appointments Today</li>
+                                <li>Reports Generated</li>
+                                <li>AI Insights</li>
+                            </ul>
+                            <p class="text-blue-600 text-xs mt-3">Click on any card to navigate to the related section.</p>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-6 border border-green-200">
+                            <h3 class="text-lg font-semibold text-green-900 mb-3 flex items-center">
+                                <i class="fas fa-clock mr-2"></i>
+                                Recent Activity
+                            </h3>
+                            <p class="text-green-800 text-sm">Track your recent actions including:</p>
+                            <ul class="list-disc list-inside text-green-700 text-sm space-y-1 mt-2">
+                                <li>New pet registrations</li>
+                                <li>Appointment bookings</li>
+                                <li>Report generations</li>
+                                <li>System updates</li>
+                            </ul>
+                        </div>
+                        <div class="bg-purple-50 rounded-lg p-6 border border-purple-200">
+                            <h3 class="text-lg font-semibold text-purple-900 mb-3 flex items-center">
+                                <i class="fas fa-calendar-check mr-2"></i>
+                                Upcoming Appointments
+                            </h3>
+                            <p class="text-purple-800 text-sm">Quick view of your next appointments with:</p>
+                            <ul class="list-disc list-inside text-purple-700 text-sm space-y-1 mt-2">
+                                <li>Pet names and owners</li>
+                                <li>Appointment times</li>
+                                <li>Status indicators</li>
+                            </ul>
+                        </div>
+                        <div class="bg-orange-50 rounded-lg p-6 border border-orange-200">
+                            <h3 class="text-lg font-semibold text-orange-900 mb-3 flex items-center">
+                                <i class="fas fa-bolt mr-2"></i>
+                                Quick Actions
+                            </h3>
+                            <p class="text-orange-800 text-sm">Fast access to common tasks:</p>
+                            <ul class="list-disc list-inside text-orange-700 text-sm space-y-1 mt-2">
+                                <li>Add New Pet</li>
+                                <li>Schedule Appointment</li>
+                                <li>Generate Report</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pet Management -->
+            <section id="patients" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-paw text-blue-600 mr-3"></i>
+                    Pet Management
+                </h2>
+                <div class="space-y-6">
+                    <p class="text-gray-700 leading-relaxed">
+                        Manage your pet and owner records efficiently with comprehensive pet management features.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-700 mb-2">Pet List</h3>
+                            <p class="text-gray-600 mb-3">View all your pets in an organized list with search and filter capabilities.</p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                                <li>Search pets by name, ID, or owner information</li>
+                                <li>Filter by species, breed, status, or other criteria</li>
+                                <li>Quick access to pet and owner details</li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-700 mb-2">Add New Pet</h3>
+                            <p class="text-gray-600 mb-3">Create new pet records with comprehensive information:</p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                                <li>Pet information (name, species, breed, DOB, microchip)</li>
+                                <li>Owner contact details</li>
+                                <li>Medical history and allergies</li>
+                                <li>Emergency contacts</li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-700 mb-2">Pet Details</h3>
+                            <p class="text-gray-600 mb-3">Access comprehensive pet and owner information:</p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                                <li>Complete veterinary history</li>
+                                <li>Past appointments and visits</li>
+                                <li>Prescriptions and medications</li>
+                                <li>Test results and reports</li>
+                                <li>Case notes and documentation</li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-orange-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-700 mb-2">Edit Pet Information</h3>
+                            <p class="text-gray-600">Update pet and owner records as needed, with full audit trail of changes.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Owner Management -->
+            <section id="owners" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-user-friends text-indigo-600 mr-3"></i>
+                    Owner Management
+                </h2>
+                <div class="space-y-6">
+                    <p class="text-gray-700 leading-relaxed">
+                        Efficiently manage pet owner information, contact details, and relationships with their pets. The owner management module helps you maintain comprehensive records of all pet owners in your practice.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-indigo-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-700 mb-2">Owner List</h3>
+                            <p class="text-gray-600 mb-3">View all pet owners in an organized list with advanced search and filter capabilities.</p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                                <li>Search owners by name, email, phone, or address</li>
+                                <li>Filter by registration date, number of pets, or status</li>
+                                <li>Quick access to owner details and associated pets</li>
+                                <li>View owner activity history</li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-700 mb-2">Add New Owner</h3>
+                            <p class="text-gray-600 mb-3">Create new owner records with comprehensive information:</p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                                <li>Personal information (full name, date of birth, gender)</li>
+                                <li>Contact details (email, phone numbers, address)</li>
+                                <li>Emergency contact information</li>
+                                <li>Preferred communication method</li>
+                                <li>Payment and billing preferences</li>
+                                <li>Notes and special instructions</li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-700 mb-2">Owner Details</h3>
+                            <p class="text-gray-600 mb-3">Access comprehensive owner information and related data:</p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                                <li>Complete contact information and addresses</li>
+                                <li>List of all pets owned by this owner</li>
+                                <li>Appointment history across all pets</li>
+                                <li>Payment history and outstanding balances</li>
+                                <li>Communication log (calls, emails, messages)</li>
+                                <li>Preferences and special instructions</li>
+                                <li>Emergency contacts</li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-700 mb-2">Owner-Pet Relationships</h3>
+                            <p class="text-gray-600 mb-3">Manage the relationship between owners and their pets:</p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                                <li>Link multiple pets to a single owner</li>
+                                <li>Assign primary and secondary owners for each pet</li>
+                                <li>View all pets associated with an owner</li>
+                                <li>Manage ownership transfers</li>
+                                <li>Track co-ownership scenarios</li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-orange-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-700 mb-2">Edit Owner Information</h3>
+                            <p class="text-gray-600 mb-3">Update owner records as needed:</p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                                <li>Modify contact information and addresses</li>
+                                <li>Update payment and billing preferences</li>
+                                <li>Change communication preferences</li>
+                                <li>Add or update notes and special instructions</li>
+                                <li>Full audit trail of all changes</li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-teal-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-700 mb-2">Contact Management</h3>
+                            <p class="text-gray-600 mb-3">Manage owner communications effectively:</p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                                <li>Multiple contact methods (phone, email, SMS)</li>
+                                <li>Preferred contact times and methods</li>
+                                <li>Communication history and logs</li>
+                                <li>Appointment reminders and notifications</li>
+                                <li>Bulk communication capabilities</li>
+                            </ul>
+                        </div>
+                        <div class="border-l-4 border-pink-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-700 mb-2">Billing & Payment Information</h3>
+                            <p class="text-gray-600 mb-3">Track financial information for each owner:</p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                                <li>Payment method preferences</li>
+                                <li>Billing address and payment terms</li>
+                                <li>Outstanding balances and payment history</li>
+                                <li>Insurance information</li>
+                                <li>Payment reminders and notifications</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-lg mt-6">
+                        <h3 class="text-lg font-semibold text-indigo-900 mb-3 flex items-center">
+                            <i class="fas fa-lightbulb mr-2"></i>
+                            Best Practices
+                        </h3>
+                        <ul class="list-disc list-inside text-indigo-800 text-sm space-y-2">
+                            <li>Keep owner contact information up-to-date for effective communication</li>
+                            <li>Regularly verify email addresses and phone numbers</li>
+                            <li>Document all communication preferences to improve client satisfaction</li>
+                            <li>Use the owner-pet relationship feature to manage multi-pet households efficiently</li>
+                            <li>Maintain accurate billing information to streamline payment processing</li>
+                            <li>Review owner activity regularly to identify inactive accounts</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appointments -->
+            <section id="appointments" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-calendar-alt text-green-600 mr-3"></i>
+                    Appointment Management
+                </h2>
+                <div class="space-y-6">
+                    <p class="text-gray-700 leading-relaxed">
+                        Efficiently manage your appointment schedule with advanced scheduling features.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-green-50 rounded-lg p-6 border border-green-200">
+                            <h3 class="text-lg font-semibold text-green-900 mb-3">
+                                <i class="fas fa-plus-circle mr-2"></i>
+                                Schedule New Appointment
+                            </h3>
+                            <ul class="list-disc list-inside text-green-700 text-sm space-y-1">
+                                <li>Select pet and owner from your database</li>
+                                <li>Choose date and time slot</li>
+                                <li>Set appointment type and duration</li>
+                                <li>Add notes and reminders</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                            <h3 class="text-lg font-semibold text-blue-900 mb-3">
+                                <i class="fas fa-list mr-2"></i>
+                                View Appointments
+                            </h3>
+                            <ul class="list-disc list-inside text-blue-700 text-sm space-y-1">
+                                <li>Daily, weekly, or monthly views</li>
+                                <li>Filter by status or veterinarian</li>
+                                <li>Quick status updates</li>
+                                <li>Pet and owner information at a glance</li>
+                            </ul>
+                        </div>
+                        <div class="bg-purple-50 rounded-lg p-6 border border-purple-200">
+                            <h3 class="text-lg font-semibold text-purple-900 mb-3">
+                                <i class="fas fa-edit mr-2"></i>
+                                Edit Appointments
+                            </h3>
+                            <ul class="list-disc list-inside text-purple-700 text-sm space-y-1">
+                                <li>Modify appointment details</li>
+                                <li>Change time or date</li>
+                                <li>Update status</li>
+                                <li>Add or modify notes</li>
+                            </ul>
+                        </div>
+                        <div class="bg-orange-50 rounded-lg p-6 border border-orange-200">
+                            <h3 class="text-lg font-semibold text-orange-900 mb-3">
+                                <i class="fas fa-calendar-times mr-2"></i>
+                                Reschedule Appointments
+                            </h3>
+                            <ul class="list-disc list-inside text-orange-700 text-sm space-y-1">
+                                <li>Quick rescheduling options</li>
+                                <li>Automatic owner notifications</li>
+                                <li>Conflict detection</li>
+                                <li>History tracking</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reports -->
+            <section id="reports" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-file-medical text-purple-600 mr-3"></i>
+                    Veterinary Reports
+                </h2>
+                <div class="space-y-6">
+                    <p class="text-gray-700 leading-relaxed">
+                        Create, manage, and track veterinary reports and test results efficiently.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="bg-purple-50 rounded-lg p-6 border border-purple-200">
+                            <h3 class="text-lg font-semibold text-purple-900 mb-3">
+                                <i class="fas fa-file-plus mr-2"></i>
+                                Create New Report
+                            </h3>
+                            <p class="text-purple-800 text-sm mb-2">Generate comprehensive veterinary reports with:</p>
+                            <ul class="list-disc list-inside text-purple-700 text-sm space-y-1">
+                                <li>Pet and owner information and test results</li>
+                                <li>Diagnosis and findings</li>
+                                <li>Recommendations and follow-up</li>
+                                <li>Attachments and images</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                            <h3 class="text-lg font-semibold text-blue-900 mb-3">
+                                <i class="fas fa-folder-open mr-2"></i>
+                                Report Management
+                            </h3>
+                            <ul class="list-disc list-inside text-blue-700 text-sm space-y-1">
+                                <li>View all reports in organized list</li>
+                                <li>Filter by pet, owner, date, or type</li>
+                                <li>Search functionality</li>
+                                <li>Status tracking (draft, completed, reviewed)</li>
+                                <li>Priority-based organization</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-6 border border-green-200">
+                            <h3 class="text-lg font-semibold text-green-900 mb-3">
+                                <i class="fas fa-download mr-2"></i>
+                                Report Actions
+                            </h3>
+                            <ul class="list-disc list-inside text-green-700 text-sm space-y-1">
+                                <li>Edit existing reports</li>
+                                <li>Download as PDF</li>
+                                <li>Share with pet owners</li>
+                                <li>Print reports</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Features Overview -->
+            <section id="ai-features" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-brain text-indigo-600 mr-3"></i>
+                    AI-Powered Features
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    AI Vet includes a comprehensive suite of AI-powered tools designed to enhance your veterinary practice. These intelligent features help with diagnosis, treatment planning, risk assessment, and more.
+                </p>
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg p-6 border border-indigo-200 mb-6">
+                    <p class="text-indigo-900 font-semibold mb-2">All AI features are powered by GPT-4.1:</p>
+                    <ul class="list-disc list-inside text-indigo-800 text-sm space-y-1">
+                        <li>GPT-4.1 for text-based AI features</li>
+                        <li>GPT-4.1 Vision for image analysis</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- AI Assistant -->
+            <section id="ai-assistant" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-robot text-blue-600 mr-3"></i>
+                    AI Assistant
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-gray-700 leading-relaxed">
+                        Your intelligent veterinary assistant that can help with various veterinary queries, pet information, and clinical decision support.
+                    </p>
+                    <div class="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">Key Features:</h3>
+                        <ul class="list-disc list-inside text-blue-700 text-sm space-y-2">
+                            <li><strong>Veterinary Queries:</strong> Ask questions about symptoms, treatments, or veterinary conditions</li>
+                            <li><strong>Pet Information:</strong> Query pet data, veterinary history, and prescriptions</li>
+                            <li><strong>Treatment Suggestions:</strong> Get AI-powered treatment recommendations</li>
+                            <li><strong>Medication Information:</strong> Access medication details and interactions for animals</li>
+                            <li><strong>Clinical Guidelines:</strong> Reference latest veterinary research and guidelines</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                        <p class="text-sm text-gray-700"><strong>Example Queries:</strong></p>
+                        <ul class="list-disc list-inside text-gray-600 text-sm mt-2 space-y-1">
+                            <li>"What are the symptoms of diabetes in dogs?"</li>
+                            <li>"Show me Max the Golden Retriever's veterinary history"</li>
+                            <li>"What medications is Fluffy the cat currently taking?"</li>
+                            <li>"Recommend treatment for feline upper respiratory infection"</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Treatment Recommendations -->
+            <section id="ai-treatment" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-stethoscope text-green-600 mr-3"></i>
+                    AI Treatment Plans
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-gray-700 leading-relaxed">
+                        Generate comprehensive, evidence-based treatment plans tailored to your pets' specific conditions.
+                    </p>
+                    <div class="bg-green-50 rounded-lg p-6 border border-green-200">
+                        <h3 class="text-lg font-semibold text-green-900 mb-3">Features:</h3>
+                        <ul class="list-disc list-inside text-green-700 text-sm space-y-2">
+                            <li>Personalized treatment recommendations based on pet data</li>
+                            <li>Evidence-based veterinary medicine integration</li>
+                            <li>Medication suggestions with species-appropriate dosages</li>
+                            <li>Follow-up care plans</li>
+                            <li>Diet and lifestyle recommendations</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Drug Interaction -->
+            <section id="ai-drug-interaction" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-pills text-red-600 mr-3"></i>
+                    AI Drug Interaction Checker
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-gray-700 leading-relaxed">
+                        Safely check for potential drug interactions before prescribing medications to animals.
+                    </p>
+                    <div class="bg-red-50 rounded-lg p-6 border border-red-200">
+                        <h3 class="text-lg font-semibold text-red-900 mb-3">Features:</h3>
+                        <ul class="list-disc list-inside text-red-700 text-sm space-y-2">
+                            <li>Check interactions between multiple medications</li>
+                            <li>Pet-specific interaction analysis</li>
+                            <li>Severity ratings (mild, moderate, severe)</li>
+                            <li>Alternative medication suggestions</li>
+                            <li>Food and supplement interaction warnings</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Medical Image -->
+            <section id="ai-image" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-x-ray text-purple-600 mr-3"></i>
+                    AI Medical Image Analysis
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-gray-700 leading-relaxed">
+                        Analyze veterinary images using GPT-4.1 Vision to assist in diagnosis.
+                    </p>
+                    <div class="bg-purple-50 rounded-lg p-6 border border-purple-200">
+                        <h3 class="text-lg font-semibold text-purple-900 mb-3">Supported Image Types:</h3>
+                        <ul class="list-disc list-inside text-purple-700 text-sm space-y-2">
+                            <li>X-rays and radiographs</li>
+                            <li>CT scans and MRIs</li>
+                            <li>Ultrasound images</li>
+                            <li>Dermatology photos</li>
+                            <li>Pathology slides</li>
+                        </ul>
+                        <p class="text-purple-800 text-sm mt-4"><strong>Note:</strong> AI analysis is for assistance only and should not replace professional veterinary judgment.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Voice Input -->
+            <section id="ai-voice" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-microphone text-orange-600 mr-3"></i>
+                    AI Voice Input
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-gray-700 leading-relaxed">
+                        Use voice commands to interact with the system and create veterinary notes hands-free.
+                    </p>
+                    <div class="bg-orange-50 rounded-lg p-6 border border-orange-200">
+                        <h3 class="text-lg font-semibold text-orange-900 mb-3">Features:</h3>
+                        <ul class="list-disc list-inside text-orange-700 text-sm space-y-2">
+                            <li>Voice-to-text transcription for notes</li>
+                            <li>Hands-free pet data entry</li>
+                            <li>Voice commands for navigation</li>
+                            <li>Real-time transcription</li>
+                            <li>Multi-language support</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Appointment Optimizer -->
+            <section id="ai-optimizer" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-calendar-check text-teal-600 mr-3"></i>
+                    AI Appointment Optimizer
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-gray-700 leading-relaxed">
+                        Optimize your appointment schedule using AI to maximize efficiency and pet owner satisfaction.
+                    </p>
+                    <div class="bg-teal-50 rounded-lg p-6 border border-teal-200">
+                        <h3 class="text-lg font-semibold text-teal-900 mb-3">Features:</h3>
+                        <ul class="list-disc list-inside text-teal-700 text-sm space-y-2">
+                            <li>Optimal time slot suggestions</li>
+                            <li>Pet owner preference learning</li>
+                            <li>Resource allocation optimization</li>
+                            <li>Reduced wait times</li>
+                            <li>Schedule conflict prevention</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Risk Assessment -->
+            <section id="ai-risk" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-shield-alt text-yellow-600 mr-3"></i>
+                    AI Risk Assessment
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-gray-700 leading-relaxed">
+                        Assess pet risk factors and potential complications using AI-powered analysis.
+                    </p>
+                    <div class="bg-yellow-50 rounded-lg p-6 border border-yellow-200">
+                        <h3 class="text-lg font-semibold text-yellow-900 mb-3">Features:</h3>
+                        <ul class="list-disc list-inside text-yellow-700 text-sm space-y-2">
+                            <li>Comprehensive risk factor analysis</li>
+                            <li>Disease progression prediction</li>
+                            <li>Complication risk scoring</li>
+                            <li>Preventive care recommendations</li>
+                            <li>Risk stratification</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Health Trends -->
+            <section id="ai-trends" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-chart-line text-pink-600 mr-3"></i>
+                    AI Health Trends
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-gray-700 leading-relaxed">
+                        Track and analyze health trends across your pet population.
+                    </p>
+                    <div class="bg-pink-50 rounded-lg p-6 border border-pink-200">
+                        <h3 class="text-lg font-semibold text-pink-900 mb-3">Features:</h3>
+                        <ul class="list-disc list-inside text-pink-700 text-sm space-y-2">
+                            <li>Population health analytics</li>
+                            <li>Disease trend identification</li>
+                            <li>Seasonal pattern recognition</li>
+                            <li>Comparative analysis by species/breed</li>
+                            <li>Predictive insights</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Health Analytics -->
+            <section id="ai-analytics" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-chart-bar text-indigo-600 mr-3"></i>
+                    AI Health Analytics
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-gray-700 leading-relaxed">
+                        Advanced analytics and insights powered by AI to improve veterinary practice outcomes.
+                    </p>
+                    <div class="bg-indigo-50 rounded-lg p-6 border border-indigo-200">
+                        <h3 class="text-lg font-semibold text-indigo-900 mb-3">Features:</h3>
+                        <ul class="list-disc list-inside text-indigo-700 text-sm space-y-2">
+                            <li>Practice performance metrics</li>
+                            <li>Pet outcome analysis</li>
+                            <li>Treatment effectiveness tracking</li>
+                            <li>Resource utilization insights</li>
+                            <li>Customizable reports and dashboards</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Symptom Analyzer -->
+            <section id="ai-symptom" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-search text-cyan-600 mr-3"></i>
+                    AI Symptom Analyzer
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-gray-700 leading-relaxed">
+                        Analyze pet symptoms to assist in diagnosis and treatment planning.
+                    </p>
+                    <div class="bg-cyan-50 rounded-lg p-6 border border-cyan-200">
+                        <h3 class="text-lg font-semibold text-cyan-900 mb-3">Features:</h3>
+                        <ul class="list-disc list-inside text-cyan-700 text-sm space-y-2">
+                            <li>Symptom pattern recognition</li>
+                            <li>Differential diagnosis suggestions</li>
+                            <li>Severity assessment</li>
+                            <li>Recommended tests and examinations</li>
+                            <li>Treatment pathway suggestions</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Report Generator -->
+            <section id="ai-report" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-file-alt text-violet-600 mr-3"></i>
+                    AI Report Generator
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-gray-700 leading-relaxed">
+                        Automatically generate comprehensive veterinary reports using AI assistance.
+                    </p>
+                    <div class="bg-violet-50 rounded-lg p-6 border border-violet-200">
+                        <h3 class="text-lg font-semibold text-violet-900 mb-3">Features:</h3>
+                        <ul class="list-disc list-inside text-violet-700 text-sm space-y-2">
+                            <li>Automated report generation from pet data</li>
+                            <li>Structured veterinary documentation</li>
+                            <li>Customizable report templates</li>
+                            <li>Multi-format export (PDF, DOCX)</li>
+                            <li>Quality assurance checks</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings & Profile -->
+            <section id="settings" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-cog text-gray-600 mr-3"></i>
+                    Settings & Profile
+                </h2>
+                <div class="space-y-6">
+                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">
+                            <i class="fas fa-user-circle mr-2"></i>
+                            Profile Management
+                        </h3>
+                        <ul class="list-disc list-inside text-gray-700 text-sm space-y-2">
+                            <li>Update personal information</li>
+                            <li>Change password</li>
+                            <li>Manage contact details</li>
+                            <li>Profile picture upload</li>
+                        </ul>
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">
+                            <i class="fas fa-sliders-h mr-2"></i>
+                            System Settings
+                        </h3>
+                        <ul class="list-disc list-inside text-blue-700 text-sm space-y-2">
+                            <li>GPT-4.1 configuration</li>
+                            <li>Notification settings</li>
+                            <li>Language preferences</li>
+                            <li>Display preferences</li>
+                            <li>Data export options</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 rounded-lg p-6 border border-green-200">
+                        <h3 class="text-lg font-semibold text-green-900 mb-3">
+                            <i class="fas fa-brain mr-2"></i>
+                            AI Settings
+                        </h3>
+                        <ul class="list-disc list-inside text-green-700 text-sm space-y-2">
+                            <li>Configure GPT-4.1 API key</li>
+                            <li>Test API connection</li>
+                            <li>Adjust AI response parameters</li>
+                            <li>Manage AI feature preferences</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- User Management -->
+            <section id="user-management" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-users-cog text-blue-600 mr-3"></i>
+                    User Management
+                </h2>
+                <div class="space-y-6">
+                    <p class="text-gray-700 leading-relaxed">
+                        Manage system users, roles, and permissions. The user management module allows administrators to create, update, and manage user accounts with appropriate access levels based on their roles in the veterinary practice.
+                    </p>
+                    
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg mb-6">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3 flex items-center">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            Access Control
+                        </h3>
+                        <p class="text-blue-800 text-sm mb-2">User Management is only accessible to <strong>Administrators</strong>. Other user roles do not have access to this module.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-700 mb-2">User List</h3>
+                            <p class="text-gray-600 mb-3">View all system users in an organized list with search and filter capabilities.</p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                                <li>Search users by name, email, or role</li>
+                                <li>Filter by role, status, or registration date</li>
+                                <li>View user activity and last login information</li>
+                                <li>Quick access to user details and permissions</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-700 mb-2">Add New User</h3>
+                            <p class="text-gray-600 mb-3">Create new user accounts with appropriate roles and permissions:</p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                                <li>Personal information (name, email)</li>
+                                <li>Role assignment (Administrator, Veterinarian, Staff, Receptionist)</li>
+                                <li>Veterinary-specific information (specialization, license number for veterinarians)</li>
+                                <li>Password setup and security</li>
+                                <li>Account status (active/inactive)</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-700 mb-2">User Roles & Permissions</h3>
+                            <p class="text-gray-600 mb-3">The system includes four distinct user roles with different access levels:</p>
+                            
+                            <div class="grid md:grid-cols-2 gap-4 mt-4">
+                                <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                                    <h4 class="font-semibold text-blue-900 mb-2 flex items-center">
+                                        <i class="fas fa-user-shield mr-2"></i>
+                                        Administrator
+                                    </h4>
+                                    <p class="text-blue-800 text-sm mb-2">Full system access and control</p>
+                                    <ul class="list-disc list-inside text-blue-700 text-xs space-y-1">
+                                        <li>User management (create, edit, delete users)</li>
+                                        <li>All pet and owner management</li>
+                                        <li>All appointments and reports</li>
+                                        <li>System settings and AI configuration</li>
+                                        <li>All AI features access</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-green-50 rounded-lg p-4 border border-green-200">
+                                    <h4 class="font-semibold text-green-900 mb-2 flex items-center">
+                                        <i class="fas fa-user-md mr-2"></i>
+                                        Veterinarian
+                                    </h4>
+                                    <p class="text-green-800 text-sm mb-2">Medical features and patient management</p>
+                                    <ul class="list-disc list-inside text-green-700 text-xs space-y-1">
+                                        <li>Full pet and owner management</li>
+                                        <li>Create and manage appointments</li>
+                                        <li>Create, edit, and review reports</li>
+                                        <li>All AI features access</li>
+                                        <li>No user management access</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-purple-50 rounded-lg p-4 border border-purple-200">
+                                    <h4 class="font-semibold text-purple-900 mb-2 flex items-center">
+                                        <i class="fas fa-user-tie mr-2"></i>
+                                        Staff
+                                    </h4>
+                                    <p class="text-purple-800 text-sm mb-2">Appointments and basic operations</p>
+                                    <ul class="list-disc list-inside text-purple-700 text-xs space-y-1">
+                                        <li>View pets and owners (read-only)</li>
+                                        <li>Create and manage appointments</li>
+                                        <li>Create and edit reports</li>
+                                        <li>Appointment optimizer AI</li>
+                                        <li>No user management or AI settings</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-orange-50 rounded-lg p-4 border border-orange-200">
+                                    <h4 class="font-semibold text-orange-900 mb-2 flex items-center">
+                                        <i class="fas fa-user-headset mr-2"></i>
+                                        Receptionist
+                                    </h4>
+                                    <p class="text-orange-800 text-sm mb-2">Scheduling and data entry</p>
+                                    <ul class="list-disc list-inside text-orange-700 text-xs space-y-1">
+                                        <li>View pets and owners (read-only)</li>
+                                        <li>Create and update owners</li>
+                                        <li>Create and update appointments</li>
+                                        <li>No report access</li>
+                                        <li>No AI features access</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-l-4 border-indigo-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-700 mb-2">Edit User Information</h3>
+                            <p class="text-gray-600 mb-3">Update user accounts and permissions:</p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                                <li>Modify user personal information</li>
+                                <li>Change user roles and permissions</li>
+                                <li>Update veterinary credentials (specialization, license)</li>
+                                <li>Reset passwords</li>
+                                <li>Activate or deactivate accounts</li>
+                                <li>Full audit trail of all changes</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-l-4 border-teal-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-700 mb-2">User Details</h3>
+                            <p class="text-gray-600 mb-3">View comprehensive user information:</p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                                <li>Personal information and contact details</li>
+                                <li>Role and assigned permissions</li>
+                                <li>Veterinary credentials (if applicable)</li>
+                                <li>Account status and activity</li>
+                                <li>Last login information</li>
+                                <li>Account creation and modification history</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-l-4 border-red-500 pl-4">
+                            <h3 class="text-xl font-semibold text-gray-700 mb-2">Delete User</h3>
+                            <p class="text-gray-600 mb-3">Remove user accounts from the system:</p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                                <li>Permanent deletion of user accounts</li>
+                                <li>Confirmation required before deletion</li>
+                                <li>Associated data handling options</li>
+                                <li>Deletion audit trail</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-lg mt-6">
+                        <h3 class="text-lg font-semibold text-indigo-900 mb-3 flex items-center">
+                            <i class="fas fa-lightbulb mr-2"></i>
+                            Best Practices
+                        </h3>
+                        <ul class="list-disc list-inside text-indigo-800 text-sm space-y-2">
+                            <li>Assign roles based on job responsibilities and security requirements</li>
+                            <li>Regularly review user accounts and deactivate unused accounts</li>
+                            <li>Ensure veterinarians have valid license numbers in their profiles</li>
+                            <li>Use strong passwords and encourage regular password changes</li>
+                            <li>Monitor user activity logs for security purposes</li>
+                            <li>Limit administrator accounts to essential personnel only</li>
+                            <li>Keep user information up-to-date, especially contact details</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tips & Best Practices -->
+            <section id="tips" class="section-anchor bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-lightbulb text-yellow-500 mr-3"></i>
+                    Tips & Best Practices
+                </h2>
+                <div class="space-y-6">
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded">
+                        <h3 class="text-lg font-semibold text-yellow-900 mb-3">General Tips</h3>
+                        <ul class="list-disc list-inside text-yellow-800 space-y-2">
+                            <li>Keep pet and owner information up-to-date for accurate AI recommendations</li>
+                            <li>Use the search functionality to quickly find pets, appointments, or reports</li>
+                            <li>Regularly review and update appointment statuses</li>
+                            <li>Export important reports for backup purposes</li>
+                            <li>Use AI features as decision support tools, not replacements for veterinary judgment</li>
+                        </ul>
+                    </div>
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-3">AI Features Best Practices</h3>
+                        <ul class="list-disc list-inside text-blue-800 space-y-2">
+                            <li>Always verify AI-generated recommendations with your veterinary expertise</li>
+                            <li>Use drug interaction checker before prescribing new medications</li>
+                            <li>Review AI-generated reports before finalizing them</li>
+                            <li>Ensure your GPT-4.1 API key is valid and has sufficient credits</li>
+                            <li>Use voice input in quiet environments for better accuracy</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded">
+                        <h3 class="text-lg font-semibold text-green-900 mb-3">Security & Privacy</h3>
+                        <ul class="list-disc list-inside text-green-800 space-y-2">
+                            <li>Always log out when finished, especially on shared computers</li>
+                            <li>Keep your password secure and change it regularly</li>
+                            <li>Be mindful of data privacy and veterinary practice compliance when using AI features</li>
+                            <li>Review pet and owner data access logs regularly</li>
+                            <li>Ensure secure network connections when accessing the system</li>
+                        </ul>
+                    </div>
+                    <div class="bg-purple-50 border-l-4 border-purple-500 p-6 rounded">
+                        <h3 class="text-lg font-semibold text-purple-900 mb-3">Efficiency Tips</h3>
+                        <ul class="list-disc list-inside text-purple-800 space-y-2">
+                            <li>Use keyboard shortcuts for faster navigation</li>
+                            <li>Set up quick actions for frequently performed tasks</li>
+                            <li>Use filters and search to quickly locate information</li>
+                            <li>Take advantage of bulk actions where available</li>
+                            <li>Customize your dashboard to show most relevant information</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="bg-gray-800 text-white rounded-lg p-8 mt-12">
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold mb-4">AI Vet</h3>
+                    <p class="text-gray-300 mb-4">Complete AI Powered Veterinary Clinic Management System</p>
+                    <p class="text-gray-400 text-sm">
+                        For technical support or questions, please contact your system administrator.
+                    </p>
+                    <p class="text-gray-500 text-xs mt-4">
+                        © 2024 AI Vet. All rights reserved.
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobileMenuBtn" class="lg:hidden fixed top-4 left-4 z-50 bg-blue-600 text-white p-3 rounded-lg shadow-lg">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="lg:hidden fixed inset-0 bg-blue-900 text-white z-40 transform -translate-x-full transition-transform duration-300">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <h1 class="text-2xl font-bold flex items-center">
+                    <i class="fas fa-stethoscope mr-3 text-blue-300"></i>
+                    AI Vet
+                </h1>
+                <button id="closeMobileMenu" class="text-white">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <ul class="space-y-2">
+                <li><a href="#introduction" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-book-open mr-3 w-5"></i>Introduction</a></li>
+                <li><a href="#technology-stack" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-code mr-3 w-5"></i>Technology Stack</a></li>
+                <li><a href="#installation" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-download mr-3 w-5"></i>Installation</a></li>
+                <li><a href="#getting-started" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-rocket mr-3 w-5"></i>Getting Started</a></li>
+                <li><a href="#dashboard" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-tachometer-alt mr-3 w-5"></i>Dashboard</a></li>
+                <li><a href="#patients" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-paw mr-3 w-5"></i>Pet Management</a></li>
+                <li><a href="#owners" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-user-friends mr-3 w-5"></i>Owner Management</a></li>
+                <li><a href="#appointments" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-calendar-alt mr-3 w-5"></i>Appointments</a></li>
+                <li><a href="#reports" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-file-medical mr-3 w-5"></i>Veterinary Reports</a></li>
+                <li><a href="#ai-features" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-brain mr-3 w-5"></i>AI Features</a></li>
+                <li><a href="#settings" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-cog mr-3 w-5"></i>Settings & Profile</a></li>
+                <li><a href="#user-management" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-users-cog mr-3 w-5"></i>User Management</a></li>
+                <li><a href="#tips" class="block px-4 py-2 rounded hover:bg-blue-800 transition flex items-center"><i class="fas fa-lightbulb mr-3 w-5"></i>Tips & Best Practices</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('-translate-x-full');
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('-translate-x-full');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('-translate-x-full');
+            });
+        });
+
+        // Jump to anchor links (instant scroll)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'auto',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
